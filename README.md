@@ -2,7 +2,9 @@
 
 Exemplo de utilização do modulo GPS ME-X1000RW com Intel Edison
 
-Este módulo tramite via porta serial, dados de gps que podem ser armazenados no cartão SD Card na Intel edison, esses dados podem ser exportados para o Google Earth e caso os dados sejam coletados em movimento, será mostrado no Google Earth o caminho percorrido.
+Este módulo transmite via porta serial, dados de gps que podem ser armazenados em SD Card na Intel edison, esses dados podem ser exportados para o Google Earth e caso os dados sejam coletados em movimento, será mostrado no Google Earth o caminho percorrido.
+
+É um belo ponto de partida para o desenvolvimento rastreadores e similares, ou entender o funcionamento.
 
 Este script em Python foi baseado no trabalho de FILIPEFLOP
 disponível em:
