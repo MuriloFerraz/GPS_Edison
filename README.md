@@ -12,7 +12,7 @@ http://blog.filipeflop.com/arduino/usando-o-arduino-gps-shield-com-google-earth.
 
 # Lista de materiais:
 
-Intel Edison com Arduino Expansion Board
-Modulo GPS ME-x1000RW (ou equivalente)
-Cartão SD - formatado FAT32
-Bateria 9V
+- Intel Edison com Arduino Expansion Board
+- Modulo GPS ME-x1000RW (ou equivalente)
+- Cartão SD - formatado FAT32
+- Bateria 9V
