@@ -36,7 +36,7 @@ while(1):
     fileOut.writelines(data)
 	
 	# se a linha lida começa com "$GPGGA", então:
-	# ps# O modulo gps tranmite varios dados de gps
+	# ps# O modulo gps transmite varios dados de gps
 	# porem, somente os dados "$GPGGA" podem ser processadas
 	# pela lib pynmea2.
 	# leia o datasheet do modulo ME-X1000RW para mais
