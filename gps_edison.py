@@ -6,7 +6,7 @@
 # Programa: GPS Logger com Intel Edison
 # Autor: Murilo Ferraz
 #
-# Baseado no trabalho de FILIPEFLOP
+# Inspirado no trabalho de FILIPEFLOP
 # blog.filipeflop.com/arduino/usando-o-arduino-gps-shield-com-google-earth.html
 #
 #################################
@@ -17,6 +17,27 @@ import pynmea2
 import serial
 # https://github.com/pyserial/pyserial
 import mraa
+import time
+import pyupm_i2clcd as grove_lcd
+
+# Grove LCD RGB Backlight - i2c
+lcd = grove_lcd.Jhd1313m1(0, 0x3E, 0x62)
+
+#### Apresentacao ####
+lcd.setCursor(0, 0)
+lcd.setColor(255, 0, 0)
+lcd.write('#IntelMaker')
+lcd.setCursor(1, 0)
+lcd.write('Edi GPS Logger')
+time.sleep(2)
+lcd.clear()
+lcd.setCursor(0, 0)
+lcd.write('Intel Edison')
+lcd.setCursor(1, 0)
+lcd.write('iniciando...')
+time.sleep(2)
+lcd.setColor(0, 0, 255)
+####--------####
 
 # Arquivo de texto no qual o log será gravado
 fileOut = open('/media/sdcard/output.txt','w')
@@ -50,7 +71,16 @@ while(1):
         msg = pynmea2.parse(coordenadas)
 		#msg = pynmea2.parse(data)
 		
-	#coordenadas processadas, podem ser pesquisadas no goole maps
+	#coordenadas processadas, podem ser pesquisadas no google maps
 	print (str(msg.latitude) + " " + str(msg.longitude))
+	
+	# escrever no LCD as coordenadas atuais
+	lcd.clear()
+	lcd.setCursor(0, 0)
+	lcd.write(str(msg.latitude))
+	lcd.setCursor(1, 0)
+	lcd.write(str(msg.longitude))
+	
+	
 gps.close()
 fileOut.close()
